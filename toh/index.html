@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Tower of Hanoi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Tower of Hanoi</h1>
+        <div class="controls">
+            <select id="disk-count">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <select id="game-mode">
+                <option value="player">Player</option>
+                <option value="coach">Coach</option>
+            </select>
+        </div>
+        <div class="container">
+            <div id="source" class="tower" data-name="Source"></div>
+            <div id="auxiliary" class="tower" data-name="Auxiliary"></div>
+            <div id="sink" class="tower" data-name="Sink"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

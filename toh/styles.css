@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.game-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    width: 300px; /* Set a fixed width for controls */
+    margin: 0 auto; /* Center the controls */
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    gap: 70px; /* Set gap between towers */
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tower {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 160px; /* Increased width for larger disks */
+    height: 200px;
+    border: 2px solid #333;
+    background-color: #e8e8e8;
+    padding: 10px;
+    position: relative;
+}
+
+.tower::before {
+    content: attr(data-name);
+    position: absolute;
+    top: -25px;
+    font-weight: bold;
+}
+
+.disk {
+    position: relative;
+    height: 25px; /* Set disk height to 25px */
+    background-color: #5a9;
+    border: 1px solid #333;
+    margin: 3px 0;
+    border-radius: 10px; /* Set border radius to 10px */
+    transition: all 0.2s;
+    cursor: grab;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.disk::after {
+    content: attr(data-size); /* Display disk number from data-size attribute */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.disk[data-size="1"] { width: 30px; }
+.disk[data-size="2"] { width: 50px; }
+.disk[data-size="3"] { width: 70px; }
+.disk[data-size="4"] { width: 90px; }
+.disk[data-size="5"] { width: 110px; }
